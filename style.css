@@ -1,0 +1,322 @@
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+}
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background: #000;
+}
+.wrapper{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#circle1{
+    position: fixed;
+    top: 5%;
+    left: 25%;
+    width: 13em;
+    height: 13em;
+    border-radius: 50%;
+    background: linear-gradient(-25deg, #d84869, #f46641);
+    box-shadow: 0 0 50px #d84869;
+    animation: moveCircle1 15s infinite;
+}
+@keyframes moveCircle1{
+    50%{
+        top: 4%;
+        left: 28%;
+        scale: 1.11;
+    }
+}
+
+#circle2{
+    position: absolute;
+    bottom: 5%;
+    right: 25%;
+    width: 19em;
+    height: 19em;
+    border-radius: 50%;
+    z-index: -1;
+    background: linear-gradient(-25deg, #5648d8, #8641f4);
+    box-shadow: 0 0 50px #5648d8;
+    animation: moveCircle2 8s infinite;
+}
+@keyframes moveCircle2{
+    50%{
+        bottom: 6%;
+        right: 26%;
+    }
+}
+.card{
+    /* min-width: 350px; */
+    width: 30vw;
+    height: 80vh;
+    background: #ffffff1a;
+    backdrop-filter: blur(15px);
+    border: 2px solid #ffffff30;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: hidden;
+}
+.heading{
+    color: white;
+    font-size: 2.5rem;
+}
+.subHeading{
+    color: #ffffff85;
+    font-size: 1.5rem;
+}
+.btn-grp{
+    display: flex;
+    gap: 16px;
+}
+.btn2{
+    font-weight: 500;
+    font-size: .75rem;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-left: 2em;
+    padding-right: 2em;
+    border: 2px solid #ffffffb9;
+    background-color: #ffffff00;
+    /* margin-left: .25rem; */
+    color: #ffffffb9;
+    border-radius: 4px;
+}
+.btn1{
+    font-size: .75rem;
+    font-weight: 500;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    border: 2px solid #ffffffb9;
+    background-color: #ffffff00;
+    /* margin-right: .25rem; */
+    color: #ffffffb9;
+    border-radius: 4px;
+}
+.btn .fa-share{
+    margin-right: .3rem;
+}
+.btn{
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: #ffffffb9;
+    color: #131313;
+}
+
+.modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    border: 2px solid #ffffff59;
+    color: white;
+    padding: 20px 25px;
+    border-radius: 20px;
+    /* height: 40%;
+    width: 40%; */
+    /* width: 550px;
+    height: 300px; */
+    height: 40vh;
+    width: 40vw;
+    /* min-width: 500px;
+    min-height: 300px; */
+    scale: 0;
+    background: #00000088;
+    backdrop-filter: blur(10px);
+    transition: 0.5s ease-in-out;
+    overflow: hidden;
+}
+.share-my-profile{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ffffff88;
+    padding-bottom: .5rem;
+}
+.close {
+    cursor: pointer;
+  }
+.share-this-via{
+    margin-top: 1.5rem;
+    
+}
+.icon-container{
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+.icon{
+    height: 30px;
+    width: 30px;
+    border: 1px solid black;
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    /* margin: 10px 0px; */
+    gap: 10px;
+    align-items: center;
+    padding: 2rem;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+} 
+.icon i {
+    font-size: 27px;
+}
+#facebook{
+    color: #1771e6;
+    border: 1px solid #1771e6;
+}
+#facebook:hover{
+    background-color: #1771e6;
+    color: #fff;
+}
+#twitter{
+    color: #1c99e6;
+    border: 1px solid #1c99e6;
+}
+#twitter:hover{
+    background-color: #1c99e6;
+    color: #fff;
+}
+  
+#instagram{
+    color: #cb2770;
+    border: 1px solid #cb2770;
+}
+#instagram:hover{
+    background-color: #cb2770;
+    color: #fff;
+}
+  
+#whatsapp{
+    color: #2fe664;
+    border: 1px solid #2fe664;
+}
+#whatsapp:hover{
+    background-color: #2fe664;
+    color: #fff;
+}
+  
+#telegram{
+    color: #0081c2;
+    border: 1px solid #0081c2;
+}
+#telegram:hover{
+    background-color: #0081c2;
+    color: #fff;
+}
+.active{
+    scale: 1;
+}
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: .5s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+    /* background-color: #5f5f5f83; */
+}
+.overlayactive{
+    opacity: 1;
+    cursor: pointer;
+}
+
+@media(max-width: 1250px){
+    .card{
+        min-width: 400px;
+    }
+    .btn-grp{
+        display: flex;
+        flex-direction: column;
+    }
+}
+/* @media(max-width: 1050px){
+    .modal{
+        height: 40vh;
+    }
+    .icon-container{
+        flex-wrap: wrap;
+        margin-bottom: 5rem;
+    }
+} */
+@media(max-width: 1050px){
+    .modal{
+        height: 45vh;
+        width: 55vw;
+    }
+    .icon-container{
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+} 
+@media(max-width: 580px){
+    .modal{
+        width: 60vw;
+        height: 60vh;
+    }
+}
+
+@media(max-width: 700px){
+    .wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .card{
+        height: 65vh;
+        width: 50px;
+    }
+}
+@media(max-width: 450px){
+    .wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .card{
+        min-width: 90vw;
+    }
+    img{
+        height: 120px;
+        width: 120px;
+    }
+    .heading{
+        font-size: 1.5rem;
+    }
+    .subHeading{
+        font-size: .8rem;
+    }
+    .modal{
+        min-height: 70vh;
+    }
+}
+@media(max-width: 330px){
+    .modal{
+        min-height: 90vh;
+    }
+}
+@media(max-width: 300px){
+    .modal{
+        min-width: 150px;
+        overflow: hidden;
+        min-height: 95vh;
+    }
+}
